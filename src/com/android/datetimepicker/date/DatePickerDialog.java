@@ -256,7 +256,8 @@ public class DatePickerDialog extends DialogFragment implements
                     mCallBack.onDateSet(DatePickerDialog.this, mCalendar.get(Calendar.YEAR),
                             mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH));
                 }
-                dismiss();
+                //UNISOC: 1298092 prevent IllegalStateException
+                dismissAllowingStateLoss();
             }
         });
 
